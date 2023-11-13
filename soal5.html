@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputNama" placeholder="Nama">
+    <input type="number" id="inputUmur" placeholder="Umur">
+    <input type="text" id="inputAlamat" placeholder="Alamat">
+    <input type="text" id="inputHobi" placeholder="Hobi">
+    <button id="btnBuatKalimat">Buat Kalimat</button>
+    <p id="kalimatHasil"></p>
+
+    <form action="index.html">
+        <button style="margin-top: 100px;">Back</button>
+    </form>
+    
+</body>
+<script>
+    // Ambil elemen-elemen HTML yang diperlukan
+const inputNama = document.getElementById("inputNama");
+const inputUmur = document.getElementById("inputUmur");
+const inputAlamat = document.getElementById("inputAlamat");
+const inputHobi = document.getElementById("inputHobi");
+const btnBuatKalimat = document.getElementById("btnBuatKalimat");
+const kalimatHasil = document.getElementById("kalimatHasil");
+
+// Buat event listener untuk tombol "Buat Kalimat"
+btnBuatKalimat.addEventListener("click", function () {
+  const nama = inputNama.value;
+  const umur = inputUmur.value;
+  const alamat = inputAlamat.value;
+  const hobi = inputHobi.value;
+
+  const kalimatLengkap = buatKalimat(nama, umur, alamat, hobi);
+  kalimatHasil.textContent = kalimatLengkap;
+});
+
+function buatKalimat(nama, umur, alamat, hobi) {
+  return `Nama saya ${nama} umur saya ${umur} tahun, alamat saya di ${alamat}, dan saya punya hobi yaitu ${hobi}.`;
+}
+</script>
+
+</html>
